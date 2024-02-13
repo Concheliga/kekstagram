@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import {isEscapeKey} from './utils.js';
 import { unblockSubmitButton } from './user_forms.js';
 
