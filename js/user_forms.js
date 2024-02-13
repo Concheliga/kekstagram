@@ -1,5 +1,4 @@
 import { isEscapeKey } from './utils.js';
-import { resetScale } from './scale.js';
 
 const imgUploadForm = document.querySelector('.img-upload__form');
 const imgUploadButton = imgUploadForm.querySelector('.img-upload__start');
@@ -90,17 +89,12 @@ const closePhotoRedactor = function () {
   document.removeEventListener('keydown', onDocumentKeydown);
   textHashTag.value = '';
   textDescription.value = '';
-  resetScale();
 };
 
 const openPhotoRedactor = function () {
   bodyElement.classList.add('modal-open');
   imgUpload.classList.remove('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
-  document.querySelector('.img-upload__effect-level').classList.add('hidden');
-  document.querySelector('.scale__control--value').value = '100%';
-  document.querySelector('.img-upload__preview').style.removeProperty('filter');
-  document.querySelector('#effect-none').checked = true;
 };
 
 closeButton.addEventListener('click', () => {
