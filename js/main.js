@@ -4,7 +4,9 @@ import { setUserSubmitForm, closePhotoRedactor } from './user_forms.js';
 import './effects.js';
 import { debounce, showAlert } from './utils.js';
 import  { init, getFilteredPictures } from './filters.js';
-import './photo.js';
+
+
+
 
 setUserSubmitForm(closePhotoRedactor);
 
