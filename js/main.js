@@ -1,1 +1,1 @@
-import './picture_generator.js';
+import './picture_popup.js';

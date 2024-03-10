@@ -5,14 +5,22 @@ const pictureTemplate = document.querySelector('#picture').content.querySelector
 const pictureFragment = document.createDocumentFragment();
 const descriptionArray = Array.from({length : 10}, createPhotoDescription);
 
-descriptionArray.forEach(({url, description, likes, comments})=>{
-  const picture = pictureTemplate.cloneNode(true);
-  const pictureImg = picture.querySelector('img');
-  pictureImg.src = url;
-  pictureImg.alt = description;
-  picture.querySelector('.picture__likes').textContent = likes;
-  picture.querySelector('.picture__comments').textContent = comments;
-  pictureFragment.append(picture);
-});
+function createPicture() {
+  descriptionArray.forEach(({url, description, likes, comments})=>{
+    const picture = pictureTemplate.cloneNode(true);
+    const pictureImg = picture.querySelector('img');
+    pictureImg.src = url;
+    pictureImg.alt = description;
+    picture.querySelector('.picture__likes').textContent = likes;
+    picture.querySelector('.picture__comments').textContent = comments.length;
+    pictureFragment.append(picture);
+  });
 
-picturesContainer.append(pictureFragment);
+  picturesContainer.append(pictureFragment);
+}
+
+function deleteCreatedPicture(){
+  pictureFragment.innerHTML = '';
+}
+
+export{createPicture, deleteCreatedPicture};
