@@ -24,7 +24,7 @@ const getRandomElementArray = function(element) {
   return element[getUniqNumber(0, element.length - 1)()];
 };
 
-//функция для создания элементов с повторениями
+
 const getRandomRepeatableElementArray = function(element) {
   return element[getRandomNumber(0, element.length - 1)];
 };

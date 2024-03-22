@@ -97,7 +97,7 @@ const showComments = function () {
   }
 };
 
-//button.onclick = showComments;
+
 button.addEventListener('click', (evt) => {
   evt.preventDefault();
   showComments();

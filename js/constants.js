@@ -76,11 +76,10 @@ const MESSAGES = [
 
 const createComment = function() {
   return {
-    id: getCommentID(),       //ID делаю по порядку вызовов, поэтому сделала отдельную функцию createIdGenerator
-    avatar: `img/avatar-${  getRandomNumber(1, AVATAR_COUNT)  }.svg`, //аватарки могут повторяться, поэтому функция getRandomNumber
-    message: getRandomRepeatableElementArray(MESSAGES),    //
-    name: getRandomRepeatableElementArray(NAMES), //имена могут повторяться, поэтому getRandomRepeatableElementArray
-    /*likes: getRandomNumber(LIKE_MIN_COUNT, LIKE_MAX_COUNT) //лайки тоже могут повторяться */
+    id: getCommentID(),
+    avatar: `img/avatar-${  getRandomNumber(1, AVATAR_COUNT)  }.svg`,
+    message: getRandomRepeatableElementArray(MESSAGES),
+    name: getRandomRepeatableElementArray(NAMES),
   };
 };
 
@@ -90,7 +89,7 @@ const createPhotoDescription = function(index) {
     url: `photos/${  getUniqNumber(1, PICTURE_COUNT)()  }.jpg`,
     description: getRandomElementArray(DESCRIPTION),
     likes: getRandomNumber(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
-    comments: Array.from({length : getRandomNumber(0, COMMENT_COUNT)}, createComment) //создаю массив комментариев с помощью функции createComment
+    comments: Array.from({length : getRandomNumber(0, COMMENT_COUNT)}, createComment)
   };
 };
 
